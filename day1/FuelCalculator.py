@@ -1,7 +1,19 @@
 def fuelCalculation(mass: int):
+    """
+    Calculates fuel needed based on mass
+
+    :param mass: mass of fuel/module
+    :return: mass of fuel required to lift passed mass
+    """
     return mass // 3.0 - 2
 
 def totalFuelCalculation(mass: int):
+    """
+    Calculates total fuel needed based on mass (including fuel needed for fuel)
+
+    :param mass: mass of fuel/module
+    :return:  mass of fuel required to lift passed mass plus additional fuel
+    """
     requiredFuel = 0
     mass = fuelCalculation(mass)
 
@@ -10,6 +22,7 @@ def totalFuelCalculation(mass: int):
         mass = fuelCalculation(mass)
 
     return requiredFuel
+
 
 part1Fuel = 0
 part2Fuel = 0
